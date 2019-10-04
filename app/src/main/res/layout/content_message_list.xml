@@ -14,7 +14,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_above="@+id/chatLayout"
-        android:background="@color/blue"
+        android:background="#e8f1ff"
         android:clipToPadding="false"
         android:paddingTop="10dp"
         android:paddingBottom="50dp"
@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/blue"
+            android:background="#e8f1ff"
             app:layout_constraintBottom_toBottomOf="parent">
 
             <RelativeLayout
@@ -49,11 +49,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:layout_toStartOf="@+id/send_message"
+                    android:layout_toStartOf="@id/send_voice_message"
                     android:background="#fff"
                     android:hint="Type a Message"
                     android:minHeight="50dp"
                     android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/send_voice_message"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/send_message"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/ic_voice"
+                    android:tint="@color/colorPrimary" />
 
                 <ImageView
                     android:id="@+id/send_message"
@@ -63,7 +73,7 @@
                     android:layout_centerVertical="true"
                     android:layout_margin="10dp"
                     android:src="@drawable/send"
-                    android:tint="@color/blue" />
+                    android:tint="@color/colorPrimary" />
 
             </RelativeLayout>
 
