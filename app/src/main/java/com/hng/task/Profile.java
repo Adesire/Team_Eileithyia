@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,6 +50,10 @@ public class Profile extends AppCompatActivity {
     private CircleImageView profileImage;
     private TextView logout;
     private String g;
+    private EditText feedback;
+    private RatingBar ratingBar;
+    private TextView tvRateCount,tvRateMessage;
+    private float ratedValue;
 
     //firebase variables
     private FirebaseAuth mAuth;
@@ -72,7 +77,10 @@ public class Profile extends AppCompatActivity {
         profileContact = findViewById(R.id.profileContact);
         profileImage = findViewById(R.id.profilePicture);
         logout = findViewById(R.id.logout);
-
+        feedback = findViewById(R.id.feedback);
+        RatingBar ratingBar = (RatingBar) findViewById(R.id.ratingBar);
+        tvRateCount = (TextView) findViewById(R.id.tvRateCount);
+        tvRateMessage = (TextView) findViewById(R.id.tvRateMessage);
 
         profileName.setEnabled(false);
         profileEmail.setEnabled(false);
@@ -93,6 +101,30 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
+            }
+        });
+
+        ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating,
+                                        boolean fromUser) {
+                ratedValue = ratingBar.getRating();
+                tvRateCount.setText("Your Rating :"
+                        + ratedValue + "/5.");
+
+                if(ratedValue<1){
+                    tvRateMessage.setText("ohh ho...");
+                }else if(ratedValue<2){
+                    tvRateMessage.setText("Thank you.");
+                }else if(ratedValue<3){
+                    tvRateMessage.setText("Not bad.");
+                }else if(ratedValue<4){
+                    tvRateMessage.setText("Nice");
+                }else if(ratedValue<5){
+                    tvRateMessage.setText("Very Nice");
+                }else if(ratedValue==5){
+                    tvRateMessage.setText("Excellent..!!!");
+                }
             }
         });
 

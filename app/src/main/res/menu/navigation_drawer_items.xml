@@ -9,8 +9,12 @@
             android:id="@+id/my_profile"
             android:icon="@drawable/profile"
             android:title="My Profile"/>
-
         <item
+            android:id="@+id/my_feedback"
+            android:icon="@drawable/feed_back"
+            android:title="Feedback"/>
+
+        <ite
             android:id="@+id/log_out"
             android:icon="@drawable/logout"
             android:title="Logout"/>

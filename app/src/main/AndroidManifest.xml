@@ -11,7 +11,9 @@
         android:roundIcon="@drawable/together"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Forget_password"></activity>
+        <activity android:name=".Forget_password">
+
+        </activity>
         <activity
             android:name=".Profile"
             android:theme="@style/AppTheme.FullScreen" />
@@ -30,6 +32,7 @@
             android:theme="@style/AppTheme.FullScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
