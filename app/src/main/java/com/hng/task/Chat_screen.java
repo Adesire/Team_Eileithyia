@@ -310,6 +310,11 @@ public class Chat_screen extends AppCompatActivity implements NavigationView.OnN
                 Intent intent = new Intent(Chat_screen.this, Profile.class);
                 startActivity(intent);
                 return true;
+            case R.id.my_feedback:
+                Intent intent1 = new Intent(Chat_screen.this,Profile.class);
+                Toast.makeText(Chat_screen.this,"How would you rate this app", Toast.LENGTH_LONG).show();
+                startActivity(intent1);
+                return true;
             case R.id.log_out:
                 if(mAuth.getCurrentUser() != null){
                     mAuth.signOut();
